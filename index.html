@@ -1,88 +1,526 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="hi" class="scroll-smooth">
 <head>
-<link rel="preconnect" href="https://iili.io">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Intraday Bulls – Market Learning Hub</title>
-<meta name="description" content="Free stock market education in Kannada and English: market basics, chart concepts and financial awareness.">
-<meta name="theme-color" content="#0b1220">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Telugu","Telugu Sangam MN",sans-serif;background:#0b1220;color:#e8edf7;line-height:1.55;-webkit-text-size-adjust:100%;padding:0 max(14px,env(safe-area-inset-right)) 0 max(14px,env(safe-area-inset-left));overflow-x:hidden;word-break:break-word}
-.wrap{max-width:460px;margin:0 auto;padding:max(16px,env(safe-area-inset-top)) 0 max(28px,env(safe-area-inset-bottom))}
-.top{display:flex;align-items:center;gap:14px}
-.top img{width:64px;height:64px;border-radius:50%;border:3px solid #38bdf8;display:block;flex:none}
-.top h1{font-size:21px;line-height:1.2;font-weight:800}
-.top p{font-size:12.5px;color:#8fa0bf;margin-top:3px}
-.pill{display:inline-block;margin:14px 0 10px;padding:6px 12px;border-radius:99px;background:#13213a;color:#7dd3fc;font-size:12.5px;font-weight:600}
-.hero{font-size:clamp(23px,7vw,29px);line-height:1.4;font-weight:800}
-.hero span{display:block;color:#38bdf8}
-.lead{margin:10px 0 0;color:#a9b6cf;font-size:14.5px}
-.list{display:grid;gap:10px}
-.item{background:#111c31;border:1px solid #1d2b47;border-radius:16px;padding:14px 16px}
-.item h2{font-size:15px;font-weight:700;color:#fff}
-.item p{font-size:13.5px;color:#93a4c2;margin-top:2px}
-.cta{margin:16px 0 6px;padding:4px}
-.btn{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;color:#04121f;background:#38bdf8;font-weight:800;font-size:clamp(15px,4.6vw,17px);padding:16px 12px;border-radius:14px;min-height:56px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.btn:active{background:#0ea5e9}
-.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
-.note{text-align:center;font-size:13px;color:#8fa0bf;margin:6px 0 24px}
-.disc{background:#0f1829;border:1px solid #1d2b47;border-left:4px solid #f87171;border-radius:12px;padding:12px 14px;font-size:12px;color:#93a4c2}
-.disc p+p{margin-top:6px}
-.disc b{color:#fca5a5}
-.foot{margin-top:16px;font-size:12px;color:#8fa0bf}
-.foot details{border-top:1px solid #1d2b47;padding:9px 0}
-.foot summary{cursor:pointer;font-weight:600;color:#7dd3fc;padding:6px 0;min-height:36px}
-.foot p{margin-top:6px}
-.copy{text-align:center;margin-top:10px;font-size:11.5px}
-@media(max-width:350px){.top h1{font-size:18px}.top img{width:56px;height:56px}.item{padding:12px}}
-</style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '3787037491434146');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=3787037491434146&ev=PageView&noscript=1"
-alt=""/></noscript>
-<!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>ZERO TO HERO TRADING | Official Educational Community</title>
+    <meta name="description" content="Stock Market & Trading को बिल्कुल Basic (Zero) से Pro (Hero) लेवल तक सीखें। Daily Market Analysis, Price Action & Risk Management Education.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#070B14',
+                        cardBg: '#0F172A',
+                        goldAccent: '#F59E0B',
+                        goldLight: '#FBBF24',
+                        emeraldAccent: '#10B981',
+                        telegramBlue: '#229ED9',
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 2.4s infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(34, 158, 217, 0.55)' },
+                            '50%': { transform: 'scale(1.015)', boxShadow: '0 0 22px 4px rgba(34, 158, 217, 0.32)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-4px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            background-color: #070B14;
+            color: #F8FAFC;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Subtle Trading Chart Grid Background */
+        .bg-grid-pattern {
+            background-size: 28px 28px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        /* Glassmorphism Card Effect */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.78);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card-gold {
+            background: linear-gradient(155deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.72));
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 158, 11, 0.28);
+        }
+
+        /* Gold Text Gradient */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Telegram CTA Button Gradient - Thumb Friendly */
+        .btn-telegram {
+            background: linear-gradient(135deg, #2AABEE 0%, #229ED9 50%, #1982B8 100%);
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s ease;
+            min-height: 56px;
+        }
+        .btn-telegram:hover {
+            background: linear-gradient(135deg, #38BDF8 0%, #229ED9 100%);
+        }
+        .btn-telegram:active {
+            transform: scale(0.97);
+        }
+
+        /* Safe bottom padding for iOS notch devices */
+        .safe-bottom-bar {
+            padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+        }
+    </style>
 </head>
-<body>
-<main class="wrap">
-  <header class="top">
-    <img src="https://iili.io/o9dQC7e.md.jpg" alt="Intraday Bulls logo" width="72" height="72" style="object-fit:cover" decoding="async">
-    <div><h1>Intraday Bulls</h1><p>Market Learning Hub</p></div>
-  </header>
-  <span class="pill">తెలుగు + English • Stock market education</span>
-  <h2 class="hero">మార్కెట్ జ్ఞానం, <span>మెరుగైన అవగాహన.</span></h2>
-  <p class="lead">స్టాక్ మార్కెట్ ముఖ్యమైన అంశాలను తెలుసుకోండి. Learn how markets work, understand research basics and explore responsible financial decisions.</p>
-  <div class="cta"><a id="join-telegram" class="btn" href="https://telegram.me/+-VrsSbPb6uFlZjll" target="_blank" rel="noopener">Join free Telegram channel</a></div>
-  <p class="note">Free to join • Educational content • Leave anytime</p>
-  <section class="list" aria-label="Learning topics">
-    <div class="item"><h2>షేర్లు మరియు సూచీలు</h2><p>Market basics: understanding stocks and indices</p></div>
-    <div class="item"><h2>Price &amp; Chart Concepts</h2><p>చార్టుల ప్రాథమిక అవగాహన</p></div>
-    <div class="item"><h2>Risk, Research &amp; Responsible Learning</h2><p>రిస్క్, పరిశోధన మరియు బాధ్యతాయుతమైన నిర్ణయాల గురించి తెలుసుకోండి.</p></div>
-  </section>
-  <div class="disc">
-    <p><b>Disclaimer:</b> This page shares general educational content, not investment advice or a recommendation to buy or sell securities. Trading involves financial risk, including possible capital loss. No returns are guaranteed.</p>
-    <p>We do not provide stock tips, trading calls, portfolio management or investment advisory services, and we do not claim to be a SEBI registered advisor. Telegram is a third-party platform with its own terms.</p>
-    <p><b>తెలుగు:</b> ఈ సమాచారం కేవలం విద్య కోసం మాత్రమే. పెట్టుబడి మరియు ట్రేడింగ్‌లో ఆర్థిక నష్టం వచ్చే ప్రమాదం ఉంది.</p>
-  </div>
-  <footer class="foot">
-    <details><summary>Privacy Policy</summary><p>We do not collect personal data on this page. When you tap the button you are taken to Telegram, which has its own privacy policy. We do not sell or share your information.</p></details>
-    <details><summary>Terms of Use</summary><p>Content is for general education only and is not investment, legal or tax advice. Please do your own research and consult a registered financial advisor before making any financial decision.</p></details>
-    <details><summary>Contact</summary><p>Email: Bull235@gmail.com</p></details>
-    <p class="copy">© Intraday Bulls. All rights reserved.</p>
-  </footer>
-</main>
+<body class="bg-grid-pattern min-h-screen flex flex-col justify-between antialiased selection:bg-amber-500/30 selection:text-amber-200 pb-24 sm:pb-0">
+
+    <!-- Contained Ambient Radial Glows (Zero Horizontal Overflow) -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[320px] sm:w-[480px] h-[280px] bg-amber-500/12 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-12 right-0 w-[260px] sm:w-[340px] h-[260px] bg-emerald-500/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <!-- Top Educational Compliance Notice Bar -->
+    <header class="w-full border-b border-white/10 bg-slate-950/90 backdrop-blur-md sticky top-0 z-30">
+        <div class="w-full max-w-lg mx-auto px-3.5 py-2.5 flex items-center justify-between gap-2 text-[11px] xs:text-xs sm:text-sm">
+            <div class="flex items-center gap-1.5 text-emerald-400 font-semibold truncate">
+                <span class="relative flex h-2 w-2 shrink-0">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span class="truncate">100% Free Learning Community</span>
+            </div>
+            <div class="text-slate-300 font-medium flex items-center gap-1 shrink-0 bg-slate-900/90 px-2.5 py-1 rounded-full border border-white/10">
+                <i class="fa-solid fa-graduation-cap text-amber-400 text-[11px]"></i>
+                <span>Education Only</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Mobile-First Container (320px - 480px Optimal Focus) -->
+    <main class="w-full max-w-lg mx-auto px-3.5 pt-4 pb-8 sm:pt-8 sm:pb-14 flex-grow">
+        
+        <!-- HERO SECTION (Compact so CTA sits cleanly Above-the-Fold on Mobile) -->
+        <section class="glass-card-gold rounded-3xl p-4 sm:p-7 text-center shadow-2xl relative overflow-hidden">
+            <!-- Subtle Decorative Chart Icon -->
+            <div class="absolute top-3 right-3.5 opacity-10 text-emerald-400 text-3xl pointer-events-none">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <!-- Brand Logo Frame -->
+            <div class="relative inline-block mb-3 animate-float">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-gradient-to-tr from-amber-500 via-yellow-300 to-emerald-400 shadow-lg shadow-amber-500/20 mx-auto">
+                    <img 
+                        src="https://iili.io/od6K61p.jpg" 
+                        alt="ZERO TO HERO TRADING Logo" 
+                        class="w-full h-full object-cover rounded-full bg-slate-900 border-2 border-slate-950"
+                        onerror="this.onerror=null; this.src='https://placehold.co/200x200/0F172A/F59E0B?text=Z2H';"
+                    >
+                </div>
+                <!-- Verified Official Badge -->
+                <div class="absolute -bottom-1 right-0 bg-slate-950 border border-amber-500/60 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md flex items-center gap-1">
+                    <i class="fa-solid fa-circle-check text-[10px]"></i>
+                    <span>Official</span>
+                </div>
+            </div>
+
+            <!-- Brand Name -->
+            <h1 class="font-display text-[22px] sm:text-3xl font-extrabold tracking-tight text-white uppercase leading-tight mb-2">
+                ZERO TO HERO <span class="text-gold-gradient block sm:inline">TRADING</span>
+            </h1>
+
+            <!-- Community Trust Pill -->
+            <div class="inline-flex items-center justify-center gap-1.5 bg-slate-900/95 border border-slate-700/80 rounded-full px-3 py-1 mb-3.5 max-w-full">
+                <div class="flex -space-x-1.5 shrink-0">
+                    <span class="w-4 h-4 rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center text-[8px] text-emerald-300"><i class="fa-solid fa-user"></i></span>
+                    <span class="w-4 h-4 rounded-full bg-amber-500/20 border border-amber-400 flex items-center justify-center text-[8px] text-amber-300"><i class="fa-solid fa-user"></i></span>
+                    <span class="w-4 h-4 rounded-full bg-sky-500/20 border border-sky-400 flex items-center justify-center text-[8px] text-sky-300"><i class="fa-solid fa-user"></i></span>
+                </div>
+                <span class="text-[11px] sm:text-xs font-medium text-slate-300 truncate">
+                    Price Action & Market Learners
+                </span>
+            </div>
+
+            <!-- Compelling Hinglish Educational Headline -->
+            <h2 class="text-base sm:text-xl font-bold text-slate-100 leading-snug mb-2.5 px-1">
+                Stock Market & Trading को बिल्कुल <span class="text-amber-400">Basic (Zero)</span> से <span class="text-emerald-400">Pro (Hero)</span> लेवल तक सीखें!
+            </h2>
+
+            <p class="text-xs sm:text-sm text-slate-300/90 leading-relaxed mb-5 px-1">
+                Chart Reading, Price Action, और Proper Risk Management की सही समझ विकसित करें। आज ही हमारी फ्री लर्निंग कम्युनिटी से जुड़ें।
+            </p>
+
+            <!-- PRIMARY ABOVE-THE-FOLD TELEGRAM CTA BUTTON -->
+            <div class="w-full">
+                <a 
+                    href="https://t.me/+M-28vecQ2h4wMGZl" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="btn-telegram animate-pulse-glow w-full flex items-center justify-center gap-2.5 text-white font-bold text-[15px] sm:text-lg py-3.5 px-4 rounded-2xl shadow-xl border border-sky-300/35 group"
+                >
+                    <i class="fa-brands fa-telegram text-2xl shrink-0 transition-transform duration-300 group-hover:rotate-12"></i>
+                    <span class="tracking-tight">Join Free Telegram Channel</span>
+                    <i class="fa-solid fa-arrow-right text-sm text-sky-100 shrink-0 transition-transform duration-300 group-hover:translate-x-1"></i>
+                </a>
+                
+                <!-- Micro-Trust Copy under CTA -->
+                <p class="text-[11px] text-slate-400 mt-2.5 flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-lock text-emerald-400 shrink-0"></i>
+                    <span>100% Free Access • Pure Market Education</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- WHAT YOU WILL LEARN INSIDE SECTION -->
+        <section class="mt-7 sm:mt-9">
+            <div class="text-center mb-4">
+                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/25 px-3 py-1 rounded-full">
+                    Educational Value
+                </span>
+                <h3 class="font-display text-lg sm:text-xl font-bold text-white mt-2.5">
+                    चैनल में आपको क्या मिलेगा?
+                </h3>
+                <p class="text-xs text-slate-400 mt-0.5">
+                    Designed to build discipline & chart reading skills
+                </p>
+            </div>
+
+            <!-- Single-Column Mobile Stack for Clean Readability on 320px-480px -->
+            <div class="grid grid-cols-1 gap-3">
+                
+                <!-- Card 1: Chart & Price Action Analysis -->
+                <div class="glass-card rounded-2xl p-4 flex items-start gap-3.5 active:border-amber-500/40 transition-colors">
+                    <div class="w-11 h-11 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 text-lg shrink-0 mt-0.5">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <h4 class="font-bold text-sm sm:text-base text-white mb-1">
+                            Chart & Price Action Analysis
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-300/85 leading-relaxed">
+                            Support, Resistance, Trendlines और Candlestick Patterns को आसान भाषा में लाइव चार्ट्स के साथ समझें।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Risk Management Strategies -->
+                <div class="glass-card rounded-2xl p-4 flex items-start gap-3.5 active:border-emerald-500/40 transition-colors">
+                    <div class="w-11 h-11 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg shrink-0 mt-0.5">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <h4 class="font-bold text-sm sm:text-base text-white mb-1">
+                            Risk Management Strategies
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-300/85 leading-relaxed">
+                            अपनी Capital को सुरक्षित रखना, Position Sizing और Trading Psychology को मजबूत करने के प्रैक्टिकल नियम सीखें।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Daily Market Updates & Levels -->
+                <div class="glass-card rounded-2xl p-4 flex items-start gap-3.5 active:border-sky-500/40 transition-colors">
+                    <div class="w-11 h-11 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 text-lg shrink-0 mt-0.5">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <h4 class="font-bold text-sm sm:text-base text-white mb-1">
+                            Daily Market Updates & Levels
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-300/85 leading-relaxed">
+                            बाजार खुलने से पहले और मार्केट आवर्स में महत्वपूर्ण Technical Zones और Market Structure का शैक्षणिक विश्लेषण।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Live Educational Discussions -->
+                <div class="glass-card rounded-2xl p-4 flex items-start gap-3.5 active:border-purple-500/40 transition-colors">
+                    <div class="w-11 h-11 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 text-lg shrink-0 mt-0.5">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <h4 class="font-bold text-sm sm:text-base text-white mb-1">
+                            Live Educational Discussions
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-300/85 leading-relaxed">
+                            Beginners के लिए स्टेप-बाय-स्टेप लर्निंग नोट्स, केस स्टडीज और मार्केट बिहेवियर पर नियमित अपडेट्स।
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HOW TO JOIN STEPS (Mobile-Tuned 3-Step Guide) -->
+        <section class="mt-7 glass-card rounded-2xl p-4 sm:p-5">
+            <h3 class="font-display text-sm sm:text-base font-bold text-center text-white mb-3.5">
+                सिर्फ 3 आसान स्टेप्स में जुड़ें:
+            </h3>
+            <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="bg-slate-900/80 rounded-xl p-2.5 border border-white/5 flex flex-col items-center">
+                    <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xs flex items-center justify-center mb-1.5">1</div>
+                    <p class="text-[11px] leading-snug font-medium text-slate-200">Telegram बटन पर क्लिक करें</p>
+                </div>
+                <div class="bg-slate-900/80 rounded-xl p-2.5 border border-white/5 flex flex-col items-center">
+                    <div class="w-6 h-6 rounded-full bg-sky-500/20 text-sky-400 font-bold text-xs flex items-center justify-center mb-1.5">2</div>
+                    <p class="text-[11px] leading-snug font-medium text-slate-200">Telegram ऐप में चैनल खोलें</p>
+                </div>
+                <div class="bg-slate-900/80 rounded-xl p-2.5 border border-white/5 flex flex-col items-center">
+                    <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xs flex items-center justify-center mb-1.5">3</div>
+                    <p class="text-[11px] leading-snug font-medium text-slate-200">"Join" दबाकर सीखना शुरू करें</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESKTOP SECONDARY CTA CARD (Hidden on small mobile since sticky bar handles mobile scroll) -->
+        <section class="hidden sm:block mt-8 glass-card-gold rounded-3xl p-6 text-center relative overflow-hidden">
+            <h3 class="font-display text-xl font-bold text-white mb-2">
+                अपनी Trading Learning Journey आज ही शुरू करें!
+            </h3>
+            <p class="text-sm text-slate-300 mb-5">
+                सही ज्ञान और अनुशासन ही एक सफल ट्रेडर की पहचान है। नीचे दिए गए बटन पर क्लिक करें और हमारे ऑफिशियल Telegram चैनल से जुड़ें।
+            </p>
+            <a 
+                href="https://t.me/+M-28vecQ2h4wMGZl" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="btn-telegram w-full flex items-center justify-center gap-3 text-white font-bold text-base py-4 px-6 rounded-2xl shadow-lg border border-sky-300/30 group"
+            >
+                <i class="fa-brands fa-telegram text-2xl"></i>
+                <span>Join Free Telegram Channel</span>
+                <i class="fa-solid fa-chevron-right text-sm transition-transform duration-300 group-hover:translate-x-1"></i>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- STICKY THUMB-FRIENDLY MOBILE BOTTOM CTA BAR (Visible on Mobile Viewports) -->
+    <div class="sm:hidden fixed bottom-0 inset-x-0 z-40 bg-slate-950/95 backdrop-blur-lg border-t border-white/10 px-3.5 pt-2.5 safe-bottom-bar shadow-[0_-10px_30px_rgba(0,0,0,0.75)]">
+        <a 
+            href="https://t.me/+M-28vecQ2h4wMGZl" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="btn-telegram w-full flex items-center justify-center gap-2.5 text-white font-bold text-[15px] py-3.5 px-4 rounded-2xl shadow-lg border border-sky-300/35 active:scale-95"
+        >
+            <i class="fa-brands fa-telegram text-2xl shrink-0"></i>
+            <span class="tracking-tight">Join Free Telegram Channel</span>
+            <i class="fa-solid fa-arrow-right text-xs text-sky-100 shrink-0"></i>
+        </a>
+    </div>
+
+    <!-- FOOTER WITH SEBI / FINANCIAL DISCLAIMER & POLICY MODALS -->
+    <footer class="w-full bg-slate-950 border-t border-white/10 pt-7 pb-8 px-3.5 text-slate-400">
+        <div class="w-full max-w-lg mx-auto">
+            
+            <!-- SEBI & Financial Education Disclaimer Box -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 mb-5 text-left">
+                <div class="flex items-center gap-2 text-amber-400 font-bold text-xs mb-2 uppercase tracking-wide">
+                    <i class="fa-solid fa-triangle-exclamation shrink-0"></i>
+                    <span>Important Disclaimer (अस्वीकरण)</span>
+                </div>
+                <p class="text-[11px] text-slate-400 leading-relaxed mb-2">
+                    <strong>Educational Purpose Only:</strong> ZERO TO HERO TRADING is strictly an educational and informational community. We are <strong>NOT SEBI registered</strong> investment advisors, research analysts, or portfolio managers. All charts, market levels, analysis, and discussions shared on our Telegram channel are solely for learning and educational purposes.
+                </p>
+                <p class="text-[11px] text-slate-400 leading-relaxed">
+                    <strong>Market Risk Warning:</strong> Trading and investing in the stock market, options, or derivatives involves substantial risk of financial loss and is not suitable for every investor. We do not guarantee any profits or fixed returns. Please consult a certified financial advisor before making any investment or trading decisions.
+                </p>
+            </div>
+
+            <!-- Policy Links (Large Tap Targets for Mobile) -->
+            <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-medium text-slate-300 mb-4">
+                <button 
+                    type="button" 
+                    onclick="openModal('privacyModal')" 
+                    class="hover:text-amber-400 active:text-amber-300 underline underline-offset-4 transition-colors cursor-pointer px-2.5 py-2 rounded-lg"
+                >
+                    Privacy Policy
+                </button>
+                <span class="text-slate-700">•</span>
+                <button 
+                    type="button" 
+                    onclick="openModal('termsModal')" 
+                    class="hover:text-amber-400 active:text-amber-300 underline underline-offset-4 transition-colors cursor-pointer px-2.5 py-2 rounded-lg"
+                >
+                    Terms & Conditions
+                </button>
+                <span class="text-slate-700">•</span>
+                <button 
+                    type="button" 
+                    onclick="openModal('disclaimerModal')" 
+                    class="hover:text-amber-400 active:text-amber-300 underline underline-offset-4 transition-colors cursor-pointer px-2.5 py-2 rounded-lg"
+                >
+                    Risk Disclosure
+                </button>
+            </div>
+
+            <!-- Copyright, Meta Disclaimer & Agency Credit -->
+            <div class="text-center text-[11px] text-slate-500 space-y-2 leading-relaxed">
+                <p>&copy; <span id="currentYear"></span> ZERO TO HERO TRADING. All Rights Reserved.</p>
+                <p>This site is not a part of the Facebook™ website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook™ in any way.</p>
+                <div class="pt-2">
+                    <a 
+                        href="https://t.me/+3XoqJNLxYHswNTc1" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="inline-flex items-center justify-center gap-1.5 text-slate-300 bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 px-3.5 py-2 rounded-xl transition-colors"
+                    >
+                        <span>Promoted By</span>
+                        <span class="text-amber-400 font-bold underline underline-offset-4">AD BUILD AGENCY</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRIVACY POLICY MODAL -->
+    <div id="privacyModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3.5 bg-black/85 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full max-h-[82vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="flex items-center justify-between px-4 py-3.5 border-b border-slate-800 bg-slate-950/70">
+                <h3 id="privacyTitle" class="font-display font-bold text-base text-white">Privacy Policy</h3>
+                <button type="button" onclick="closeModal('privacyModal')" class="text-slate-400 hover:text-white p-2 rounded-xl hover:bg-slate-800 transition-colors" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="p-4 overflow-y-auto text-xs sm:text-sm text-slate-300 space-y-3 leading-relaxed">
+                <p><strong>1. Information We Collect:</strong> We respect your privacy. This landing page does not collect sensitive personal data, financial credentials, or payment details directly. Standard anonymous analytics (such as page views and button clicks) may be recorded via advertising pixels to improve user experience.</p>
+                <p><strong>2. Third-Party Links (Telegram):</strong> Clicking the "Join Free Telegram Channel" button redirects you to the official Telegram platform. Once you enter Telegram, your interactions and profile visibility are governed by Telegram's own Privacy Policy.</p>
+                <p><strong>3. No Spam Policy:</strong> We never sell, rent, or trade user information to third-party marketers.</p>
+                <p><strong>4. Contact & Updates:</strong> We reserve the right to update this policy at any time to remain compliant with digital advertising standards.</p>
+            </div>
+            <div class="px-4 py-3 border-t border-slate-800 bg-slate-950/70">
+                <button type="button" onclick="closeModal('privacyModal')" class="w-full sm:w-auto sm:float-right bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-colors">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TERMS & CONDITIONS MODAL -->
+    <div id="termsModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3.5 bg-black/85 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full max-h-[82vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="flex items-center justify-between px-4 py-3.5 border-b border-slate-800 bg-slate-950/70">
+                <h3 id="termsTitle" class="font-display font-bold text-base text-white">Terms & Conditions</h3>
+                <button type="button" onclick="closeModal('termsModal')" class="text-slate-400 hover:text-white p-2 rounded-xl hover:bg-slate-800 transition-colors" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="p-4 overflow-y-auto text-xs sm:text-sm text-slate-300 space-y-3 leading-relaxed">
+                <p><strong>1. Acceptance of Terms:</strong> By accessing this website and joining the ZERO TO HERO TRADING Telegram channel, you agree to abide by these Terms & Conditions.</p>
+                <p><strong>2. Educational Nature of Content:</strong> All content shared—including chart markups, technical setups, and commentary—is provided strictly for educational and self-learning purposes. Nothing constitutes a solicitation or recommendation to buy or sell securities.</p>
+                <p><strong>3. Personal Responsibility:</strong> Any trades or investments you execute based on your own analysis are solely at your own risk. ZERO TO HERO TRADING and its admins shall not be held liable for any financial losses.</p>
+                <p><strong>4. Beware of Impersonators:</strong> Only join through the official link provided on this page. We never message users first asking for money or account management.</p>
+            </div>
+            <div class="px-4 py-3 border-t border-slate-800 bg-slate-950/70">
+                <button type="button" onclick="closeModal('termsModal')" class="w-full sm:w-auto sm:float-right bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-colors">
+                    I Understand
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RISK DISCLOSURE MODAL -->
+    <div id="disclaimerModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3.5 bg-black/85 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="riskTitle">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full max-h-[82vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="flex items-center justify-between px-4 py-3.5 border-b border-slate-800 bg-slate-950/70">
+                <h3 id="riskTitle" class="font-display font-bold text-base text-amber-400">SEBI & Risk Disclosure</h3>
+                <button type="button" onclick="closeModal('disclaimerModal')" class="text-slate-400 hover:text-white p-2 rounded-xl hover:bg-slate-800 transition-colors" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="p-4 overflow-y-auto text-xs sm:text-sm text-slate-300 space-y-3 leading-relaxed">
+                <p><strong>Non-SEBI Registered Status:</strong> The creators and administrators of ZERO TO HERO TRADING are independent market educators and are not registered with the Securities and Exchange Board of India (SEBI).</p>
+                <p><strong>High Risk in Derivatives:</strong> Equity, Futures, and Options trading carry high levels of risk. Past performance of any educational case study does not guarantee future market results.</p>
+                <p><strong>Independent Decision Making:</strong> Always conduct your own due diligence and consult a SEBI-registered financial advisor before committing capital to financial markets.</p>
+            </div>
+            <div class="px-4 py-3 border-t border-slate-800 bg-slate-950/70">
+                <button type="button" onclick="closeModal('disclaimerModal')" class="w-full sm:w-auto sm:float-right bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-colors">
+                    Acknowledge
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Modal & Year Script -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Open Modal Function
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Close Modal Function
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close modal when clicking outside the modal content box
+        window.addEventListener('click', function(event) {
+            const modals = ['privacyModal', 'termsModal', 'disclaimerModal'];
+            modals.forEach(id => {
+                const modal = document.getElementById(id);
+                if (event.target === modal) {
+                    closeModal(id);
+                }
+            });
+        });
+
+        // Close modal on Escape key press
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                ['privacyModal', 'termsModal', 'disclaimerModal'].forEach(closeModal);
+            }
+        });
+    </script>
 </body>
+  
 </html>
